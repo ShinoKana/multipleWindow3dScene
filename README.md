@@ -49,3 +49,6 @@ To get started with this project, follow these steps:
 3. **Open Multiple Windows:**
 
    To fully experience the multi-window setup, open multiple instances of the URL in different windows or tabs.
+<img width="976" alt="cba819282e1fc915f926f2ed45a97e3" src="https://github.com/ShinoKana/multipleWindow3dScene/assets/100673497/e2dcd87a-5475-4cc9-b330-3ec4483cba96">
+
+
