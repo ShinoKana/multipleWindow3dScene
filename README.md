@@ -5,6 +5,10 @@ A simple example showing how to setup a 3d scene across windows on the same orig
 This is based on https://github.com/bgstaal/multipleWindow3dScene
 ---
 
+https://github.com/ShinoKana/multipleWindow3dScene/assets/100673497/fc7a6357-0e29-4dc4-b183-194dfd6a16bc
+
+
+
 ## Features
 
 - **Multi-Window Synchronization**: Using `localStorage`, the 3D scene's state is synchronized across multiple browser windows.
