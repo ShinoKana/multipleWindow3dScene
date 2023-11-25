@@ -24,7 +24,7 @@ To get started with this project, follow these steps:
 1. **Clone the Repository:**
 
    ```bash
-   git clone [[Your Repository URL]](https://github.com/ShinoKana/multipleWindow3dScene.git)
+   git clone https://github.com/ShinoKana/multipleWindow3dScene.git
    cd multipleWindow3dScene
    ```
 
