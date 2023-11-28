@@ -1,7 +1,6 @@
 import WindowManager from './WindowManager.js'
 
 
-
 const t = THREE;
 let camera, scene, renderer, world;
 let near, far;
@@ -66,6 +65,7 @@ else
 			window.addEventListener('resize', resize);
 		}, 500)	
 	}
+	
 
 	function setupScene ()
 	{
@@ -122,6 +122,7 @@ else
 		
 	}
 
+	
 	function setupWindowManager ()
 	{
 		windowManager = new WindowManager();
@@ -138,11 +139,13 @@ else
 		windowsUpdated();
 	}
 
+	
 	function windowsUpdated ()
 	{
 		updateNumberOfCubes();
 	}
 
+	
 	function updateNumberOfCubes ()
 	{
 		let wins = windowManager.getWindows();
@@ -186,6 +189,7 @@ else
 		}
 	}
 
+	
 	function createComplexSphere(radius, color) {
 		let innerSize = radius * 0.9; 
 		let outerSize = radius;
@@ -216,7 +220,7 @@ else
 		);
 		complexSphere.add(sphereWireframeOuter);
 	
-		// 创建内外玻璃球体
+
 		let sphereGlassInner = new THREE.Mesh(
 			new THREE.SphereGeometry(innerSize, 32, 32),
 			new THREE.MeshPhongMaterial({
@@ -238,8 +242,7 @@ else
 			})
 		);
 		complexSphere.add(sphereGlassOuter);
-	
-		// 创建粒子效果
+
 		let particlesOuter = createParticles(outerSize, outerColor);
 		complexSphere.add(particlesOuter);
 	
@@ -284,7 +287,6 @@ else
 
 		windowManager.update();
 
-
 		// calculate the new position based on the delta between current offset and new offset times a falloff value (to create the nice smoothing effect)
 		let falloff = .05;
 		sceneOffset.x = sceneOffset.x + ((sceneOffsetTarget.x - sceneOffset.x) * falloff);
@@ -295,7 +297,6 @@ else
 		world.position.y = sceneOffset.y;
 
 		let wins = windowManager.getWindows();
-
 
 		// loop through all our cubes and update their positions based on current window positions
 		for (let i = 0; i < cubes.length; i++)
@@ -320,6 +321,7 @@ else
 		requestAnimationFrame(render);
 	}
 
+	
 	function updateComplexSphere(complexSphere, elapsedTime) {
 		let sphereWireframeInner = complexSphere.children[0];
 		let sphereWireframeOuter = complexSphere.children[1];
@@ -346,9 +348,9 @@ else
 		var innerShift = Math.abs(Math.cos(((elapsedTime + 2.5) / 20)));
 		var outerShift = Math.abs(Math.cos(((elapsedTime + 5) / 10)));
 	
-		sphereWireframeOuter.material.color.setHSL(0, 1, outerShift);
-		sphereGlassOuter.material.color.setHSL(0, 1, outerShift);
-		particlesOuter.material.color.setHSL(0, 1, outerShift);
+		sphereWireframeOuter.material.color.setHSL(0.55, 1, outerShift);
+		sphereGlassOuter.material.color.setHSL(0.55, 1, outerShift);
+		particlesOuter.material.color.setHSL(0.55, 1, outerShift);
 	
 		sphereWireframeInner.material.color.setHSL(0.08, 1, innerShift);
 		particlesInner.material.color.setHSL(0.08, 1, innerShift);
